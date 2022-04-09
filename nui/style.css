@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+#tablet {
+    position: relative;
+    background: url('img/frame.png') no-repeat;
+    background-size: contain;
+    width: 1000px;
+    height: 700px;
+}
+
+.tablet-container {
+    position: absolute;
+    left: 58px;
+    top: 60px;
+    width: auto;
+    background-size: contain;
+    overflow: hidden;
+    height: 79%;
+    width: 88.5%;
+    background: #222222;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+.tablet-footer {
+    position: absolute;
+    left: 46.7%;
+    top: 90.5%;
+}
+
+.tablet-footer > .line {
+    width: 3vw;
+    height: 8px;
+    background-color: rgb(129, 129, 129);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tablet-footer > .line:hover {
+    background-color: rgb(161, 161, 161);
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all .4s;
+    padding: 1rem;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.page::-webkit-scrollbar {
+    display: none;
+}  
+
+#main {
+    display: grid;
+    grid-template-columns: .3fr 1fr;
+    background: url('img/background.jpg') no-repeat;
+    background-size: cover;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    background-color: #c5c3c3;
+}
+
+.page > .content {
+    font-family: 'Poppins', sans-serif;
+    color: rgb(37, 37, 37);
+    width: 90%;
+}
+
+.subtitle {
+    font-size: 20px;
+}
+
+a {
+    color: rgb(37, 37, 37);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.page > .content > h1 {
+    text-align: center;
+}
+
+.page > .content > p {
+    font-weight: 400;
+}
+
+.page > .content > .img-container {
+    width: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-block: 5px;
+    box-shadow: 0 0 4px rgb(5, 5, 5, 0.5);
+}
+
+.page > .content > .img-container > img {
+    width: 100%;
+    transform: scale(1.5);
+}
+
+.page > .content > .img-container > video {
+    width: 100%;
+}
+
+.misc {
+    display: grid;
+    grid-template-rows: .5fr 1fr;
+    transition: all 0.3s;
+}
+
+.crypto {
+    justify-self: center;
+    align-self: center;
+    background-color: rgb(5, 5, 5, 0.7);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 4px #050505;
+    border-radius: 15px;
+    width: 150px;
+    height: 90%;
+    color: white;
+}
+
+.crypto > h1 {
+    color: rgb(252, 248, 248);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0px;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.crypto > p {
+    color: rgb(137, 142, 155);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0px;
+    padding-left: 15px;
+    margin-top: -2px;
+}
+
+.crypto > .list {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin: 1rem;
+}
+
+.crypto > .list > .currency {
+    font-family: 'Poppins', sans-serif;
+}
+
+.crypto > .list > .currency > h1 {
+    font-size: 15px;
+}
+
+.crypto > .list > .currency > h1 > img {
+    width: 11px;
+    height: 11px;
+    margin-right: 3px;
+}
+
+.crypto > .list > .currency > p {
+    color: rgb(137, 142, 155);
+    font-size: 10px;
+}
+
+.widget {
+    justify-self: center;
+    align-self: center;
+    background-color: #121212;
+    box-shadow: 0 0 4px #121212;
+    border-radius: 15px;
+    width: 150px;
+    height: 140px;
+    padding: .8rem;
+}
+
+.widget > p {
+    color: rgb(253, 70, 70);
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0px;
+}
+
+.widget > h1 {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 28px;
+    margin-left: 1px;
+    margin-top: -9px;
+}
+
+.widget > h2 {
+    color: rgb(125, 128, 146);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    padding-top: .5rem;
+}
+
+.apps {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    gap: 0.8rem;
+}
+
+.application {
+    width: 60px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.application > .content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    border-radius: 20%;
+    background: #121212;
+    box-shadow: 0 0 3px rgb(80, 80, 80);
+}
+
+.application > .content > img {
+    width: 30px;
+    fill: white;
+}
+
+.application > h1 {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    color: white;
+}
+
+.application > #info { 
+    background: #9D50BB;
+    background: linear-gradient(to right, #6E48AA, #9D50BB);
+}
+
+.application > #keybinds {
+    background: #134E5E;
+    background: linear-gradient(to right, #71B280, #134E5E);
+}

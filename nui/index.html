@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    <div id='app' data-app>
+        <div id='tablet' v-show='opened'> 
+            <div class='tablet-container'>
+                <div class='page' id='main' v-if='currentPage == "main"'>
+                    <div class='misc'>
+                        <div class='widget'>
+                            <p>{{ Calendar.day }}</p>
+                            <h1>{{ Calendar.date }}</h1>
+                            <h2>Nu au fost gasite alerte</h2>
+                        </div>
+                        <div class='crypto'>
+                            <h1>Crypto</h1>
+                            <p>Most popular crypto currencies</p>
+                            <div class='list' v-for='coin in Crypto'>
+                                <div class='currency'>
+                                    <h1><img v-bind:src='coin.icon'/> {{ coin.name }}</h1>
+                                    <p>{{ coin.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class='apps'>
+                        <div class='application' v-for='app in Applications' @click='switchPage(app.href)'>
+                            <div class='content' v-bind:id='app.href'>
+                                <img v-bind:src='app.icon' />
+                            </div>
+                            <h1>{{ app.name }}</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='page' id='info' v-if='currentPage == "info"'>
+                    <div class='content'>
+                        <h1>Info</h1>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, temporibus odio accusamus quae quod veritatis nihil maiores incidunt quasi vero modi, ad, facere mollitia rem quas dolorem doloribus eaque distinctio?</p>
+                        <br>
+                        <h1>Intrebari frecvente</h1>
+                        <br>
+                        <p>
+                            <b class='subtitle'>Question?</b><br>
+                            Answer
+                        </p>
+                        <br>
+                        <p>
+                            <b class='subtitle'>Question?</b><br>
+                            Answer
+                        </p>
+                        <br>
+                    </div>
+                </div>
+
+                <div class='page' id='keybinds' v-if='currentPage == "keybinds"'>
+                    <div class='content'>
+                        <h1>Keybinds</h1>
+                        <br>
+                        <p><b>[K]</b> - Menu</p>
+                        <p><b>[N]</b> - Talk</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class='tablet-footer'>
+                <div class='line' v-on:click='switchPage("main")'></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src='libs/jquery-3.6.0.min.js'></script>
+    <script src='libs/vue.min.js'></script>
+    <script src='index.js'></script>
+</body>
+</html>
