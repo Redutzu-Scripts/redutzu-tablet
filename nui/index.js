@@ -6,7 +6,7 @@ const app = new Vue({
         opened: false,
         currentPage: 'main',
         Calendar: {
-            day: date.toLocaleDateString('ro-RO', { 
+            day: date.toLocaleDateString('en-US', { 
                 weekday: 'long' 
             }),
             date: date.getDate()
