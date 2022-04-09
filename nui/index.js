@@ -22,8 +22,8 @@ const app = new Vue({
         ]
     },
     mounted() {
-        let initial = $(`#${this.currentPage}`);
-        initial.css('opacity', '1');
+        let initial = document.getElementById(this.currentPage);
+        initial.style.opacity = 1;
     },
     methods: {
         async post(url, data = {}) {
@@ -35,23 +35,21 @@ const app = new Vue({
             
             return await response.json();
         },
-        wait(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
-        },
-        openWindow(link) {
-            window.open(link, '_blank');
+        setPageOpacity(id, value) {
+            let page = document.getElementById(id);
+            page.style.opacity = value;
         },
         async switchPage(page) {
-            // Page transition
-            if (this.currentPage != page) {
-                $(`#${this.currentPage}`).css('opacity', '0');
-                this.currentPage = page;
-                await this.wait(50);
-                $(`#${page}`).css('opacity', '1');
-            }
+            if (this.currentPage == page) return;
+
+            this.setPageOpacity(this.currentPage, 0);
+            this.currentPage = page;
+
+            setTimeout(() => {
+                this.setPageOpacity(page, 1);
+            }, 50);
         }
-    },
-    computed: {}
+    }
 });
 
 window.addEventListener('message', async ({ data }) => {

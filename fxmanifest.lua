@@ -16,7 +16,5 @@ files {
     'nui/index.html',
     'nui/index.js',
     'nui/style.css',
-	'nui/libs/jquery-3.6.0.min.js',
-    'nui/libs/vue.min.js',
     'nui/img/*'
 }
