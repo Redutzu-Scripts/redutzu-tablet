@@ -35,7 +35,7 @@ var fr = {
 const app = new Vue({
     el: '#tablet',
     data: {
-        LANG: fr,
+        LANG: en,
         opened: false,
         currentPage: 'main',
         Calendar: {
