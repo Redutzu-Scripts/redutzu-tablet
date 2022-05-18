@@ -1,23 +1,56 @@
 const date = new Date();
 
+var en = {
+    CRYPTO: {
+        TITLE: "Crypto",
+        DESCRIPTION: "Most popular crypto currencies"
+    },
+    CALANDAR: {
+        NO_EVENT: "No more events today"
+    },
+    INFO: {
+        TITLE: "Info"
+    },
+    KEYBIND:{
+        TITLE: "Keybinds"
+    }
+}
+
+var fr = {
+    CRYPTO: {
+        TITLE: "Crypto",
+        DESCRIPTION: "Les crypto-monnaies les plus populaires"
+    },
+    CALANDAR: {
+        NO_EVENT: "Pas d'autres événements aujourd'hui"
+    },
+    INFO: {
+        TITLE: "Info"
+    },
+    KEYBIND:{
+        TITLE: "Raccourcis clavier"
+    }
+}
+
 const app = new Vue({
     el: '#tablet',
     data: {
+        LANG: en,
         opened: false,
         currentPage: 'main',
         Calendar: {
-            day: date.toLocaleDateString('en-US', { 
-                weekday: 'long' 
+            day: date.toLocaleDateString('en-US', {
+                weekday: 'long'
             }),
             date: date.getDate()
-        }, 
+        },
         Crypto: [
-            { name: 'Bitcoin', icon: 'img/btc.svg', description: 'Your gateway to Bitcoin & beyond' }, 
-            { name: 'Ethereum', icon: 'img/eth.svg', description: 'The tech is new and ever-evolving' }, 
+            { name: 'Bitcoin', icon: 'img/btc.svg', description: 'Your gateway to Bitcoin & beyond' },
+            { name: 'Ethereum', icon: 'img/eth.svg', description: 'The tech is new and ever-evolving' },
             { name: 'Avalanche', icon: 'img/avax.svg', description: 'Blazingly Fast, Low Cost & Eco-Friendly' }
         ],
         Applications: [
-            { name: 'Information', icon: 'img/info.svg', href: 'info' }, 
+            { name: 'Information', icon: 'img/info.svg', href: 'info' },
             { name: 'Controls', icon: 'img/controls.svg', href: 'keybinds' }
         ]
     },
@@ -32,7 +65,7 @@ const app = new Vue({
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             });
-            
+
             return await response.json();
         },
         setPageOpacity(id, value) {
