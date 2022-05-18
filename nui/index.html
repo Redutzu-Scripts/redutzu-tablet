@@ -19,11 +19,11 @@
                         <div class='widget'>
                             <p>{{ Calendar.day }}</p>
                             <h1>{{ Calendar.date }}</h1>
-                            <h2>No more events today</h2>
+                            <h2>{{ LANG.CALANDAR.NO_EVENT}}</h2>
                         </div>
                         <div class='crypto'>
-                            <h1>Crypto</h1>
-                            <p>Most popular crypto currencies</p>
+                            <h1>{{ LANG.CRYPTO.TITLE }}</h1>
+                            <p>{{ LANG.CRYPTO.DESCRIPTION }}</p>
                             <div class='list' v-for='coin in Crypto'>
                                 <div class='currency'>
                                     <h1><img v-bind:src='coin.icon'/> {{ coin.name }}</h1>
@@ -45,7 +45,7 @@
 
                 <div class='page' id='info' v-if='currentPage == "info"'>
                     <div class='content'>
-                        <h1>Info</h1>
+                        <h1>{{ LANG.INFO.TITLE }}</h1>
                         <br>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, temporibus odio accusamus quae quod veritatis nihil maiores incidunt quasi vero modi, ad, facere mollitia rem quas dolorem doloribus eaque distinctio?</p>
                         <br>
@@ -66,7 +66,7 @@
 
                 <div class='page' id='keybinds' v-if='currentPage == "keybinds"'>
                     <div class='content'>
-                        <h1>Keybinds</h1>
+                        <h1>{{ LANG.KEYBIND.TITLE }}</h1>
                         <br>
                         <p><b>[K]</b> - Menu</p>
                         <p><b>[N]</b> - Talk</p>
